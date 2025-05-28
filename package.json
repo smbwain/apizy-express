@@ -18,5 +18,13 @@
     "apizy": ">= 0.2.2",
     "express": ">= 4.0.0"
   },
-  "private": true
+  "author": {
+    "name": "Roman Ditchuk",
+    "email": "roman@ototak.net",
+    "url": "http://ototak.net"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smbwain/apizy-express.git"
+  }
 }
