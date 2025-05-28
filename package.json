@@ -10,13 +10,13 @@
   "devDependencies": {
     "@types/express": "^5.0.2",
     "@types/node": "^22.15.18",
-    "apizy": "file:../apizy/apizy-0.2.0.tgz",
+    "apizy": "^0.2.2",
     "express": "^5.1.0",
     "typescript": "^5.5.3"
   },
   "peerDependencies": {
-    "express": ">= 4.0.0",
-    "apizy": ">= 0.2.2"
+    "apizy": ">= 0.2.2",
+    "express": ">= 4.0.0"
   },
   "private": true
 }
