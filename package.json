@@ -1,0 +1,22 @@
+{
+  "name": "apizy-express",
+  "version": "0.0.4",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.18",
+    "apizy": "file:../apizy/apizy-0.2.0.tgz",
+    "express": "^5.1.0",
+    "typescript": "^5.5.3"
+  },
+  "peerDependencies": {
+    "express": ">= 4.0.0",
+    "apizy": ">= 0.2.2"
+  },
+  "private": true
+}
