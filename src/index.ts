@@ -19,17 +19,15 @@ function apizyExpress<Context extends {} = {}>(
 
     if (devTools?.enabled) {
         const checkToken: RequestHandler = (req, res, next) => {
-            if (devTools?.token && devTools.token !== req.query.token) {
+            if (devTools?.token && devTools.token !== (req.query.token ?? req.header('Authorization')?.split(' ')[1] ?? '')) {
                 next(new ForbiddenError());
             } else {
                 next();
             }
         }
 
-        router.get('/dev', (req, res, next) => {
-            console.log('aaa');
+        router.get('/dev/index', (req, res, next) => {
             const path = join(__dirname, '/../static/apieasy-dev-client.html');
-            console.log(path);
             res.sendFile(path, {
                 dotfiles: 'allow',
             });
