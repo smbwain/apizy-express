@@ -9,6 +9,8 @@ function apizyExpress<Context extends {} = {}>(
         devTools?: {
             enabled?: boolean;
             token?: string;
+            apiUrl?: string;
+            jsSdkPath?: string;
         };
         obfuscateErrors?: boolean;
         createContext?: (req: Request) => Context | Promise<Context>;
@@ -58,7 +60,11 @@ function apizyExpress<Context extends {} = {}>(
                 //     res.send(docMdTemplate(api));
                 //     return;
                 case 'json':
-                    res.json(api.apiDescription);
+                    res.json({
+                        ...api.apiDescription,
+                        apiUrl: devTools?.apiUrl,
+                        jsSdkPath: devTools?.jsSdkPath,
+                    });
                     return;
                 default:
                     next(new BadReqError('Unknown type'));
